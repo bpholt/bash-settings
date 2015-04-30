@@ -8,8 +8,12 @@ export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export VAGRANT_DEFAULT_PROVIDER=parallels
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
 
 complete -C aws_completer aws
+
+alias ll='ls -alh'
 
 direct_docker_host () {
   pushd /Users/bholt/Developer/dwolla-docker-vm > /dev/null
