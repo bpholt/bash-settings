@@ -1,4 +1,4 @@
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
+export GITAWAREPROMPT=~/.bash/sources_non_forked/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 export PROMPT_DIRTRIM=2
