@@ -30,3 +30,12 @@ docker_rm_exited () {
   docker rm $(docker ps -q -f status=exited)
 }
 
+chuck () {
+  export HTTP_PROXY=http://127.0.0.1:8888
+  export HTTPS_PROXY=http://127.0.0.1:8888
+}
+
+dechuck() {
+  unset HTTP_PROXY
+  unset HTTPS_PROXY
+}
