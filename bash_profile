@@ -39,3 +39,7 @@ dechuck() {
   unset HTTP_PROXY
   unset HTTPS_PROXY
 }
+
+if [ -e local.sh ]; then
+    . local.sh
+fi
