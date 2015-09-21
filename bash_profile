@@ -10,6 +10,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export VAGRANT_DEFAULT_PROVIDER=parallels
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export EC2_USERNAME=ec2-user
 
 complete -C aws_completer aws
 
@@ -38,6 +39,10 @@ chuck () {
 dechuck() {
   unset HTTP_PROXY
   unset HTTPS_PROXY
+}
+
+ssh_to_instance() {
+    ssh ${EC2_USERNAME}@$(aws ec2 describe-instances --instance-ids $1 --region us-west-2  | jq -r '.Reservations[].Instances[].PublicDnsName' | grep -v -e '^$')
 }
 
 if [ -e local.sh ]; then
