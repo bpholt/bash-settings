@@ -45,6 +45,6 @@ ssh_to_instance() {
     ssh ${EC2_USERNAME}@$(aws ec2 describe-instances --instance-ids $1 --region us-west-2  | jq -r '.Reservations[].Instances[].PublicDnsName' | grep -v -e '^$')
 }
 
-if [ -e local.sh ]; then
-    . local.sh
+if [ -e ~/.bash/local.sh ]; then
+    . ~/.bash/local.sh
 fi
