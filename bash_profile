@@ -42,7 +42,7 @@ dechuck() {
 }
 
 ssh_to_instance() {
-    ssh ${EC2_USERNAME}@$(aws ec2 describe-instances --instance-ids $1 --region us-west-2  | jq -r '.Reservations[].Instances[].PublicDnsName' | grep -v -e '^$')
+    ssh -o StrictHostKeyChecking=no ${EC2_USERNAME}@$(aws ec2 describe-instances --instance-ids $1 --region us-west-2  | jq -r '.Reservations[].Instances[].PrivateIpAddress' | grep -v -e '^$')
 }
 
 if [ -e ~/.bash/local.sh ]; then
