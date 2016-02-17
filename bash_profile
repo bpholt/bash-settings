@@ -12,6 +12,10 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export EC2_USERNAME=ec2-user
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 complete -C aws_completer aws
 
 alias ll='ls -alh'
