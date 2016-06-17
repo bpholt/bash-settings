@@ -4,3 +4,6 @@ export VAGRANT_DEFAULT_PROVIDER=parallels
 
 complete -C aws_completer aws
 
+
+# added by travis gem
+[ -f /Users/bholt/.travis/travis.sh ] && source /Users/bholt/.travis/travis.sh
