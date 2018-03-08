@@ -52,3 +52,8 @@ ssh_to_instance() {
 if [ -e ~/.bash/local.sh ]; then
     . ~/.bash/local.sh
 fi
+
+if [ -e ~/.nvm ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+fi
