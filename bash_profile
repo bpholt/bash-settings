@@ -2,6 +2,7 @@ export GITAWAREPROMPT=~/.bash/sources_non_forked/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 export PROMPT_DIRTRIM=2
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
